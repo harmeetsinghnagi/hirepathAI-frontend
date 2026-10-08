@@ -1,0 +1,15 @@
+# These files and folders will NOT be uploaded to GitHub
+
+# Environment variables - contains secret keys
+.env
+.env.local
+.env.production
+
+# Node modules - too large to upload, can be reinstalled
+node_modules
+
+# Build files
+dist
+
+# Mac system files
+.DS_Store

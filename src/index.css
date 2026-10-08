@@ -1,0 +1,4 @@
+/* This imports Tailwind CSS into our project */
+/* This one line gives us access to thousands of ready made styles */
+
+@import "tailwindcss";
