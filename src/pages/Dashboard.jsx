@@ -38,6 +38,21 @@ function Dashboard() {
   const handleGetResults = () => {
     if (!jobDescription.trim()) { toast.error('Please paste a job description first'); return }
     if (!selectedResume) { toast.error('Please select a CV or upload a new one'); return }
+    const words = jobDescription.trim().split(/\s+/)
+    const uniqueWords = new Set(words.map(w => w.toLowerCase()))
+
+    if (jobDescription.trim().length < 100) {
+      toast.error('Job description is too short. Please paste the full description.')
+      return
+    }
+    if (words.length < 20) {
+      toast.error('Please paste a complete job description.')
+      return
+    }
+    if (uniqueWords.size < 10) {
+      toast.error('This does not look like a real job description.')
+      return
+    }
     navigate('/results', { state: { jobDescription, selectedResume } })
   }
 
